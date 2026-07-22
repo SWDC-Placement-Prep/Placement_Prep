@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PrepWise AI - Onboarding Step 2</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Sora:wght@600;700&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary": "#005b56",
+                        "surface-variant": "#dce2f7",
+                        "on-secondary-fixed": "#241a00",
+                        "inverse-primary": "#80d5cb",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-tint": "#006a63",
+                        "on-error": "#ffffff",
+                        "surface-bright": "#f9f9ff",
+                        "on-tertiary-fixed-variant": "#00504b",
+                        "secondary-fixed": "#ffe08e",
+                        "secondary": "#755b00",
+                        "surface-container": "#e9edff",
+                        "primary-container": "#0f766e",
+                        "primary": "#005c55",
+                        "on-primary": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "secondary-fixed-dim": "#ecc246",
+                        "outline": "#6e7977",
+                        "primary-fixed": "#9cf2e8",
+                        "inverse-surface": "#293040",
+                        "surface-container-high": "#e1e8fd",
+                        "on-primary-fixed": "#00201d",
+                        "surface-container-highest": "#dce2f7",
+                        "tertiary-container": "#00766f",
+                        "surface-container-low": "#f1f3ff",
+                        "tertiary-fixed": "#8af4ea",
+                        "on-secondary-container": "#735a00",
+                        "surface": "#f9f9ff",
+                        "on-error-container": "#93000a",
+                        "error": "#ba1a1a",
+                        "on-primary-fixed-variant": "#00504a",
+                        "inverse-on-surface": "#edf0ff",
+                        "on-secondary-fixed-variant": "#584400",
+                        "surface-dim": "#d3daee",
+                        "on-primary-container": "#a3faef",
+                        "primary-fixed-dim": "#80d5cb",
+                        "on-surface-variant": "#3e4947",
+                        "secondary-container": "#fed255",
+                        "outline-variant": "#bdc9c6",
+                        "on-tertiary-container": "#91fcf1",
+                        "tertiary-fixed-dim": "#6dd8ce",
+                        "on-background": "#141b2a",
+                        "error-container": "#ffdad6",
+                        "on-tertiary": "#ffffff",
+                        "on-surface": "#141b2a",
+                        "background": "#f9f9ff",
+                        "on-tertiary-fixed": "#00201e"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "grid-gutter": "24px",
+                        "card-padding": "24px",
+                        "section-gap-desktop": "80px",
+                        "container-max": "1200px",
+                        "section-gap-mobile": "48px",
+                        "base": "8px"
+                    },
+                    "fontFamily": {
+                        "headline-sm": ["Sora"],
+                        "body-md": ["Inter"],
+                        "headline-md": ["Sora"],
+                        "body-sm": ["Inter"],
+                        "button-text": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "display-lg": ["Sora"],
+                        "data-label": ["JetBrains Mono"]
+                    },
+                    "fontSize": {
+                        "headline-sm": ["20px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                        "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "button-text": ["15px", {"lineHeight": "1.0", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "data-label": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.05em", "fontWeight": "500"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            background-color: #f9f9ff;
+            color: #141b2a;
+            overflow-x: hidden;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #f1f3ff;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #bdc9c6;
+            border-radius: 10px;
+        }
+        .chip-active {
+            background-color: #0f766e;
+            color: #ffffff;
+            border-color: #0f766e;
+        }
+        .input-glow:focus {
+            outline: none;
+            border-color: #0f766e;
+            box-shadow: 0 0 0 2px rgba(15, 118, 110, 0.1);
+        }
+    </style>
+</head>
+<body class="font-body-md text-body-md antialiased">
+<!-- TopNavBar (Fixed/Docked) -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-grid-gutter py-4 bg-transparent">
+<div class="font-headline-md text-headline-md font-bold text-primary">PrepWise AI</div>
+<button class="font-body-md text-body-md text-primary font-bold transition-all hover:opacity-80 active:scale-95">Need Help?</button>
+</header>
+<main class="min-h-screen flex flex-col md:flex-row">
+<!-- LEFT SIDE: Image/Branding -->
+<div class="hidden md:flex md:w-1/2 h-screen sticky top-0 bg-surface-container-low items-center justify-center overflow-hidden">
+<div class="relative w-full h-full">
+<img class="w-full h-full object-cover" data-alt="A high-quality professional photograph of a young South Asian woman in a charcoal grey business suit sitting at a white desk in a bright, modern office with large windows. She is smiling while typing on a silver laptop. Floating holographic glass UI cards surround her, one showing a green 'Placement Ready' badge with a profile icon, another showing a gold achievement medal with a checkmark, and a third displaying a teal upward-trending growth graph. The overall lighting is soft, natural, and high-key, conveying a sense of academic excellence and career success." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC9eDWeOUYKhHilAxt4L6wjkAozbmyF0TYVoUdPN_L3ogU_sEY7KgLw6ghDb0jv-p8GeoH-CwXDJ00lpa8WyYDoepRPQziIRSvXt_W3tJSm_ct7ZCCYtkuyor6PfyLJ9-6xG2Y8mc0MhSW1wygL4RiDlRg0z6lJt1dogSkzHSO59Y09EHgI1XsvBqaXandrESLwC3yWYjwtDZ8FQFm5wBJd195yXEBoLm7vE0XODqxl8teNRkbinhS54ramdVZpeyTwMeltlofSDY-a"/>
+<div class="absolute inset-0 bg-primary/5"></div>
+</div>
+</div>
+<!-- RIGHT SIDE: Onboarding Form -->
+<div class="w-full md:w-1/2 flex flex-col px-6 md:px-20 py-24 md:py-32 bg-white overflow-y-auto custom-scrollbar">
+<div class="max-w-[520px] w-full mx-auto">
+<!-- Progress Header -->
+<div class="mb-10">
+<div class="flex justify-between items-end mb-3">
+<span class="font-data-label text-data-label text-primary uppercase tracking-wider">Step 2 of 3</span>
+<span class="font-data-label text-data-label text-outline">66% Complete</span>
+</div>
+<div class="h-1.5 w-full bg-[#F6F7F4] rounded-full overflow-hidden">
+<div class="h-full bg-[#2FA39A] transition-all duration-700 ease-out" style="width: 66%"></div>
+</div>
+</div>
+<!-- Headline -->
+<h1 class="font-headline-md text-headline-md text-on-background mb-3">Tell us more about yourself</h1>
+<p class="font-body-md text-body-md text-on-surface-variant mb-10">This information helps us personalize your AI interview and resume analysis.</p>
+<!-- Form -->
+<form class="space-y-8">
+<!-- Required: Career Goal -->
+<div class="space-y-2">
+<label class="block font-data-label text-data-label text-outline uppercase">Career Goal *</label>
+<select class="w-full h-12 px-4 border border-outline-variant rounded-lg bg-white font-body-md text-body-md input-glow appearance-none cursor-pointer">
+<option disabled="" selected="" value="">Select your target role</option>
+<option value="software_engineer">Software Engineer</option>
+<option value="frontend_developer">Frontend Developer</option>
+<option value="backend_developer">Backend Developer</option>
+<option value="full_stack">Full Stack Developer</option>
+<option value="data_analyst">Data Analyst</option>
+<option value="data_scientist">Data Scientist</option>
+<option value="ai_engineer">AI Engineer</option>
+<option value="cybersecurity">Cybersecurity</option>
+<option value="cloud_engineer">Cloud Engineer</option>
+<option value="qa_engineer">QA Engineer</option>
+<option value="product_manager">Product Manager</option>
+<option value="other">Other</option>
+</select>
+</div>
+<!-- Required: Skills Known -->
+<div class="space-y-4">
+<label class="block font-data-label text-data-label text-outline uppercase">Skills Known *</label>
+<div class="flex flex-wrap gap-2">
+<button class="px-4 py-2 border border-outline-variant rounded-full text-body-sm font-medium hover:border-primary transition-colors duration-200" type="button">Python</button>
+<button class="px-4 py-2 border border-outline-variant rounded-full text-body-sm font-medium hover:border-primary transition-colors duration-200 chip-active" type="button">Java</button>
+<button class="px-4 py-2 border border-outline-variant rounded-full text-body-sm font-medium hover:border-primary transition-colors duration-200" type="button">C++</button>
+<button class="px-4 py-2 border border-outline-variant rounded-full text-body-sm font-medium hover:border-primary transition-colors duration-200 chip-active" type="button">JavaScript</button>
+<button class="px-4 py-2 border border-outline-variant rounded-full text-body-sm font-medium hover:border-primary transition-colors duration-200" type="button">React</button>
+<button class="px-4 py-2 border border-outline-variant rounded-full text-body-sm font-medium hover:border-primary transition-colors duration-200" type="button">Node</button>
+<button class="px-4 py-2 border border-outline-variant rounded-full text-body-sm font-medium hover:border-primary transition-colors duration-200" type="button">SQL</button>
+<button class="px-4 py-2 border border-outline-variant rounded-full text-body-sm font-medium hover:border-primary transition-colors duration-200" type="button">MongoDB</button>
+<button class="px-4 py-2 border border-outline-variant rounded-full text-body-sm font-medium hover:border-primary transition-colors duration-200" type="button">AWS</button>
+<button class="px-4 py-2 border border-outline-variant rounded-full text-body-sm font-medium hover:border-primary transition-colors duration-200" type="button">Docker</button>
+<button class="px-4 py-2 border border-outline-variant rounded-full text-body-sm font-medium hover:border-primary transition-colors duration-200 chip-active" type="button">Git</button>
+<button class="px-4 py-2 border border-outline-variant rounded-full text-body-sm font-medium hover:border-primary transition-colors duration-200" type="button">HTML</button>
+<button class="px-4 py-2 border border-outline-variant rounded-full text-body-sm font-medium hover:border-primary transition-colors duration-200" type="button">CSS</button>
+<button class="px-4 py-2 border border-outline-variant rounded-full text-body-sm font-medium hover:border-primary transition-colors duration-200" type="button">Communication</button>
+<button class="px-4 py-2 border border-outline-variant rounded-full text-body-sm font-medium hover:border-primary transition-colors duration-200" type="button">Leadership</button>
+</div>
+</div>
+<!-- Required: Languages & Prep Level -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="block font-data-label text-data-label text-outline uppercase">Interview Language *</label>
+<select class="w-full h-12 px-4 border border-outline-variant rounded-lg bg-white font-body-md text-body-md input-glow appearance-none">
+<option value="english">English</option>
+<option value="hindi">Hindi</option>
+<option value="marathi">Marathi</option>
+<option value="other">Other</option>
+</select>
+</div>
+<div class="space-y-2">
+<label class="block font-data-label text-data-label text-outline uppercase">Preparation Level *</label>
+<select class="w-full h-12 px-4 border border-outline-variant rounded-lg bg-white font-body-md text-body-md input-glow appearance-none">
+<option value="beginner">Beginner</option>
+<option selected="" value="intermediate">Intermediate</option>
+<option value="advanced">Advanced</option>
+</select>
+</div>
+</div>
+<!-- Optional Fields Section -->
+<div class="pt-6 border-t border-outline-variant">
+<h3 class="font-headline-sm text-headline-sm text-on-background mb-4">Professional Links (Optional)</h3>
+<div class="space-y-4">
+<div class="flex items-center border border-outline-variant rounded-lg px-4 bg-surface-container-lowest focus-within:border-primary focus-within:ring-2 focus-within:ring-primary/10 transition-all">
+<span class="material-symbols-outlined text-outline-variant mr-3">link</span>
+<input class="flex-1 py-3 border-none focus:ring-0 text-body-md bg-transparent" placeholder="LinkedIn Profile" type="url"/>
+</div>
+<div class="flex items-center border border-outline-variant rounded-lg px-4 bg-surface-container-lowest focus-within:border-primary focus-within:ring-2 focus-within:ring-primary/10 transition-all">
+<span class="material-symbols-outlined text-outline-variant mr-3">code</span>
+<input class="flex-1 py-3 border-none focus:ring-0 text-body-md bg-transparent" placeholder="GitHub Profile" type="url"/>
+</div>
+<div class="flex items-center border border-outline-variant rounded-lg px-4 bg-surface-container-lowest focus-within:border-primary focus-within:ring-2 focus-within:ring-primary/10 transition-all">
+<span class="material-symbols-outlined text-outline-variant mr-3">language</span>
+<input class="flex-1 py-3 border-none focus:ring-0 text-body-md bg-transparent" placeholder="Portfolio Website" type="url"/>
+</div>
+<div class="flex items-center border border-outline-variant rounded-lg px-4 bg-surface-container-lowest focus-within:border-primary focus-within:ring-2 focus-within:ring-primary/10 transition-all">
+<span class="material-symbols-outlined text-outline-variant mr-3">terminal</span>
+<input class="flex-1 py-3 border-none focus:ring-0 text-body-md bg-transparent" placeholder="Coding Profiles (LeetCode, etc.)" type="text"/>
+</div>
+</div>
+</div>
+<!-- Action -->
+<div class="pt-8 flex items-center gap-4">
+<button class="px-8 py-3.5 bg-primary text-white font-button-text text-button-text rounded-lg hover:bg-primary-container transition-all duration-200 active:scale-95 shadow-sm" type="button">
+                            Continue
+                        </button>
+<button class="px-6 py-3.5 bg-transparent text-primary font-button-text text-button-text hover:bg-surface-container-low transition-all duration-200" type="button">
+                            Back
+                        </button>
+</div>
+</form>
+</div>
+</div>
+</main>
+<!-- Footer (Universal for App) -->
+<footer class="w-full py-base px-grid-gutter flex flex-col md:flex-row justify-between items-center max-w-container-max mx-auto border-t border-outline-variant bg-surface-bright">
+<div class="font-headline-sm text-headline-sm text-primary mb-4 md:mb-0">PrepWise AI</div>
+<div class="flex gap-6 font-data-label text-data-label text-on-surface-variant">
+<a class="hover:text-primary underline transition-all" href="#">Privacy Policy</a>
+<a class="hover:text-primary underline transition-all" href="#">Terms of Service</a>
+<a class="hover:text-primary underline transition-all" href="#">Contact Support</a>
+</div>
+<div class="mt-4 md:mt-0 font-body-sm text-body-sm text-on-surface-variant">© 2024 PrepWise AI. All rights reserved.</div>
+</footer>
+<script>
+        // Multi-select chip logic
+        document.querySelectorAll('button[type="button"]').forEach(button => {
+            if (button.closest('.flex-wrap')) {
+                button.addEventListener('click', () => {
+                    button.classList.toggle('chip-active');
+                    button.classList.toggle('border-outline-variant');
+                });
+            }
+        });
+
+        // Entrance animation
+        window.addEventListener('DOMContentLoaded', () => {
+            const formElements = document.querySelector('form').children;
+            Array.from(formElements).forEach((el, index) => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(10px)';
+                el.style.transition = `all 0.4s ease-out ${index * 0.05}s`;
+                setTimeout(() => {
+                    el.style.opacity = '1';
+                    el.style.transform = 'translateY(0)';
+                }, 100);
+            });
+        });
+    </script>
+</body></html>
